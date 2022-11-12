@@ -39,6 +39,8 @@ dotfiles_install() {
 
                 setup "$@"
             )
+        else
+            echo
         fi
     done
 }
