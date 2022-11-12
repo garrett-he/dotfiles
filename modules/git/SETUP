@@ -1,0 +1,22 @@
+setup() {
+    dotfiles_read '[git] user.name' git_user_name
+    dotfiles_read '[git] user.email' git_user_email
+    dotfiles_read '[git] init.defaultBranch [main]' git_init_defaultBranch main
+
+    install -m 0600 -b "$MODULE_DIR"/gitconfig.template ~/.gitconfig
+
+    dotfiles_replace_text ~/.gitconfig MODULE_DIR "$MODULE_DIR"
+    dotfiles_replace_text ~/.gitconfig GIT_USER_NAME "$git_user_name"
+    dotfiles_replace_text ~/.gitconfig GIT_USER_EMAIL "$git_user_email"
+    dotfiles_replace_text ~/.gitconfig GIT_INIT_DEFAULTBRANCH "$git_init_defaultBranch"
+
+    if dotfiles_confirm '[git] commit.gpgsign' git_commit_gpgsign; then
+        echo
+        dotfiles_read '[git] user.signingkey' git_user_signingkey
+        dotfiles_replace_text ~/.gitconfig GIT_USER_SIGNINGKEY "$git_user_signingkey"
+        dotfiles_replace_text ~/.gitconfig GIT_COMMIT_GPGSIGN 'true'
+    else
+        dotfiles_delete_line ~/.gitconfig GIT_USER_SIGNINGKEY
+        dotfiles_replace_text ~/.gitconfig GIT_COMMIT_GPGSIGN 'false'
+    fi
+}
