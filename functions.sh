@@ -1,3 +1,13 @@
+dotfiles_ostype() {
+    if [[ $OSTYPE == "darwin"* ]]; then
+        echo darwin
+    elif [[ $OSTYPE == "linux"* ]]; then
+        echo linux
+    else
+        echo $OSTYPE
+    fi
+}
+
 dotfiles_print_error() {
     echo -e "\033[1;31m$1\033[0m" >&2
 }
