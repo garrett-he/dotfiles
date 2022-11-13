@@ -1,0 +1,24 @@
+# whether install module: git
+INSTALL_GIT=1
+
+# git config user.name
+GIT_USER_NAME=YOUR_NAME
+
+# git config user.email
+GIT_USER_EMAIL=YOUR_EMAIL
+
+# git config init.defaultBranch
+GIT_INIT_DEFAULTBRANCH=main
+
+# git config commit.gpgsign
+GIT_COMMIT_GPGSIGN=0
+
+# git config user.signingkey
+# works only if git_commit_gpgsign=1
+GIT_USER_SIGNINGKEY=
+
+# whether install module: shell
+INSTALL_SHELL=1
+
+# whether install module: vim
+INSTALL_VIM=1
