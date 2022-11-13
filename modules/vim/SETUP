@@ -1,6 +1,6 @@
 setup() {
     dotfiles_backup_files ~/.vimrc ~/.vim
 
-    ln -sf "$MODULE_DIR/vimrc" ~/.vimrc
-    ln -sf "$MODULE_DIR/vim" ~/.vim
+    ln -sf "$DOTFILES_MODULE_DIR/vimrc" ~/.vimrc
+    ln -sf "$DOTFILES_MODULE_DIR/vim" ~/.vim
 }

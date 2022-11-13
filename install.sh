@@ -19,23 +19,23 @@ dotfiles_announce() {
 }
 
 dotfiles_install() {
-    dotfiles_root=$(dirname "$(realpath "$0")")
-    source "$dotfiles_root/functions.sh"
+    DOTFILES_ROOT=$(dirname "$(realpath "$0")")
+    source "$DOTFILES_ROOT/functions.sh"
 
-    for MODULE_DIR in "$dotfiles_root"/modules/*; do
-        module_name=$(basename "$MODULE_DIR")
+    for DOTFILES_MODULE_DIR in "$DOTFILES_ROOT"/modules/*; do
+        DOTFILES_MODULE_NAME=$(basename "$DOTFILES_MODULE_DIR")
 
-        if dotfiles_confirm "Install module: $module_name"; then
+        if dotfiles_confirm "Install module: $DOTFILES_MODULE_NAME"; then
             echo
             (
                 source "$MODULE_DIR"/SETUP
 
                 if ! dotfiles_is_defined setup; then
-                    dotfiles_print_error "setup() not defined in module: $module_name"
+                    dotfiles_print_error "setup() not defined in module: $DOTFILES_MODULE_NAME"
                     exit 1
                 fi
 
-                dotfiles_print_info "Installing module: $module_name"
+                dotfiles_print_info "Installing module: $DOTFILES_MODULE_NAME"
 
                 setup "$@"
             )

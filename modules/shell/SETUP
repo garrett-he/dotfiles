@@ -3,14 +3,14 @@ setup() {
 
     ostype=$(dotfiles_ostype)
 
-    for shell in zsh bash; do
-        dotfiles_backup_files "$HOME/.${shell}rc"
-        dotfiles_append_shell_profile "source $MODULE_DIR/${shell}_profile" "$shell"
+    for shell_name in zsh bash; do
+        dotfiles_backup_files "$HOME/.${shell_name}rc"
+        dotfiles_append_shell_profile "source $DOTFILES_MODULE_DIR/${shell_name}_profile" "$shell_name"
     done
 
-    dotfiles_append_shell_profile "source $MODULE_DIR/profile"
+    dotfiles_append_shell_profile "source $DOTFILES_MODULE_DIR/profile"
 
-    if [[ -f "$MODULE_DIR/${ostype}_profile" ]]; then
-        dotfiles_append_shell_profile "source $MODULE_DIR/${ostype}_profile"
+    if [[ -f "$DOTFILES_MODULE_DIR/${ostype}_profile" ]]; then
+        dotfiles_append_shell_profile "source $DOTFILES_MODULE_DIR/${ostype}_profile"
     fi
 }
