@@ -16,6 +16,7 @@ setup() {
         dotfiles_replace_text ~/.gitconfig GIT_USER_SIGNINGKEY "$GIT_USER_SIGNINGKEY"
         dotfiles_replace_text ~/.gitconfig GIT_COMMIT_GPGSIGN 'true'
     else
+        echo
         dotfiles_delete_line ~/.gitconfig GIT_USER_SIGNINGKEY
         dotfiles_replace_text ~/.gitconfig GIT_COMMIT_GPGSIGN 'false'
     fi

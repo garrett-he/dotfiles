@@ -38,7 +38,7 @@ dotfiles_install() {
         if dotfiles_confirm "Install module: $DOTFILES_MODULE_NAME" || dotfiles_is_true "$module_install_toggle"; then
             echo
             (
-                source "$MODULE_DIR"/SETUP
+                source "$DOTFILES_MODULE_DIR"/SETUP
 
                 if ! dotfiles_is_defined setup; then
                     dotfiles_print_error "setup() not defined in module: $DOTFILES_MODULE_NAME"
