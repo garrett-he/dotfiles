@@ -9,7 +9,7 @@
 [credential]
 	helper = store
 [core]
-	excludesfile = MODULE_DIR/gitignore_global
+	excludesfile = DOTFILES_MODULE_DIR/gitignore_global
 	pager = less -X
 [user]
 	name = GIT_USER_NAME
