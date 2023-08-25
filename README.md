@@ -1,3 +1,5 @@
+![dotfiles Logo](./images/dotfiles-logo.png)
+
 # dotfiles
 
 This repository contains a collection of configuration files (aka dot files) and
