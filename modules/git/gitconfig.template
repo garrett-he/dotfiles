@@ -1,0 +1,21 @@
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	cl = clone
+[color]
+	ui = true
+[credential]
+	helper = store
+[core]
+	excludesfile = DOTFILES_MODULE_DIR/gitignore_global
+	pager = less -X
+[user]
+	name = GIT_USER_NAME
+	email = GIT_USER_EMAIL
+	signingkey = GIT_USER_SIGNINGKEY
+[init]
+	defaultBranch = GIT_INIT_DEFAULTBRANCH
+[commit]
+	gpgsign = GIT_COMMIT_GPGSIGN
