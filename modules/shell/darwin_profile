@@ -1,0 +1,6 @@
+if [[ $(arch) == "arm64" ]]; then
+    HOMEBREW_PREFIX=/opt/homebrew
+    export PATH="$HOMEBREW_PREFIX/bin:$PATH"
+else
+    HOMEBREW_PREFIX=/usr/local
+fi
