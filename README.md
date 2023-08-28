@@ -2,6 +2,8 @@
 
 # dotfiles
 
+[简体中文](./README_zhCN.md)
+
 This repository contains a collection of configuration files (aka dot files) and
 installer scripts for various utilities working in shell.
 
